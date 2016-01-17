@@ -1,9 +1,5 @@
-import dotenv from 'dotenv'
+import loadenv from './loadenv'
 import preFill from './prefill.js'
 import app from './server'
-
-if (process.env.NODE_ENV === 'development') {
-	dotenv.load()
-}
 
 app()
