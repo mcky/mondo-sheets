@@ -14,6 +14,29 @@ const listWebhooks = () => new Promise((resolve, reject) => {
 })
 
 const deleteDuplicateWebhooks = () => new Promise((resolve, reject) => {
+	authAndGetUserAccount()
+		.then(({id, token}) => {
+			mondo.webhooks(id, token)
+				.then(({webhooks}) => {
+
+					const seenUrls = []
+					const duplicates = webhooks.filter(hook => {
+						if (~seenUrls.indexOf(hook.url)) {
+							return true
+						} else {
+							seenUrls.push(hook.url)
+							return false
+						}
+					})
+
+					duplicates.forEach(hook => {
+						mondo.deleteWebhook(hook.id, token)
+					})
+
+				})
+				.catch(reject)
+		})
+		.catch(reject)
 })
 
 const registerWebhook = () => new Promise((resolve, reject) => {
