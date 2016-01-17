@@ -18,5 +18,6 @@ Google sheets currently fails silently at prefilling ~30 transactions. Working o
   MONDO_CLIENT_SECRET=
   MONDO_USERNAME=
   MONDO_PASSWORD=
+  
   ```
 4. Run `npm start`
