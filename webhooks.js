@@ -19,12 +19,12 @@ const deleteDuplicateWebhooks = () => new Promise((resolve, reject) => {
 			mondo.webhooks(id, token)
 				.then(({webhooks}) => {
 
-					const seenUrls = []
+					const seenUrls = new Set()
 					const duplicates = webhooks.filter(hook => {
-						if (~seenUrls.indexOf(hook.url)) {
+						if (seenUrls.has(hook.url)) {
 							return true
 						} else {
-							seenUrls.push(hook.url)
+							seenUrls.add(hook.url)
 							return false
 						}
 					})
