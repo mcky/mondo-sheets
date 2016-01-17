@@ -20,6 +20,7 @@ const init = () => {
 	app.post('/webhook', handleWebhook)
 
 	app.server.listen(PORT || 5500)
+	console.log(`Listening on ${PORT}`)
 
 	return app
 
