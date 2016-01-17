@@ -36,3 +36,8 @@ Registers a webhook with mondo and posts your transactions to a spreadhseet. The
 `npm run list-hooks` - List webhooks  
 `npm run register-hook` - Register a webhook for this application  
 `npm run dedupe-hooks` - Remove webhooks with duplicate URLs  
+
+## Thanks
+[Alex Robinson](https://github.com/solidgoldpig) for his great [`mondo-bank`](https://github.com/solidgoldpig/mondo-bank) API library
+
+[Darian Moody](https://github.com/djm/) for his help with de-duping webhooks
