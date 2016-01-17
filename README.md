@@ -4,6 +4,8 @@ Connect your [Mondo](http://getmondo.co.uk) to Google sheets.
 Registers a webhook with mondo and posts your transactions to a spreadhseet.
 
 
+
+
 ## Usage
 1. Create a google sheet with row headers matching the keys you want imported to the sheet. All keys sent from the webhook can be found in [the webhook documentation](https://getmondo.co.uk/docs/#transaction-created). (Only `merchant_id` from the merchant object is supported at the moment)
 3. Get your OAuth credentials from Mondo
@@ -40,6 +42,8 @@ Registers a webhook with mondo and posts your transactions to a spreadhseet.
 
 ## Notes
 The sheets API seems to silently fail if you try sending too many rows too fast. For now I've implimented a delay between adding rows.
+
+I've removed `account_balance` for now as it appears on old transactions but not the webhook ones yet.
 
 ## Thanks
 [Alex Robinson](https://github.com/solidgoldpig) for his great [`mondo-bank`](https://github.com/solidgoldpig/mondo-bank) API library
