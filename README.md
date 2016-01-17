@@ -1,7 +1,7 @@
 # mondo-sheets
 Connect your [Mondo](http://getmondo.co.uk) to Google sheets.
 
-Registers a webhook with mondo and posts your transactions to a spreadhseet. There's also a script to prefill your sheet with old transactions but it currently fails silently at ~30 transactions, working on a fix.
+Registers a webhook with mondo and posts your transactions to a spreadhseet.
 
 
 ## Usage
@@ -29,6 +29,7 @@ Registers a webhook with mondo and posts your transactions to a spreadhseet. The
 4. Run `npm install` to add dependencies
 5. Run `npm run register-hook` to register a webhook with the `WEBHOOK_URL` you provided
 6. Run `npm start` or `NODE_ENV=development npm start` locally
+7. Run `npm run prefill` to prefill the spreadsheet with all your past transactions
 
 ## Scripts
 `npm run start` - Start the server listening for webhooks  
@@ -36,6 +37,9 @@ Registers a webhook with mondo and posts your transactions to a spreadhseet. The
 `npm run list-hooks` - List webhooks  
 `npm run register-hook` - Register a webhook for this application  
 `npm run dedupe-hooks` - Remove webhooks with duplicate URLs  
+
+## Notes
+The sheets API seems to silently fail if you try sending too many rows too fast. For now I've implimented a delay between adding rows.
 
 ## Thanks
 [Alex Robinson](https://github.com/solidgoldpig) for his great [`mondo-bank`](https://github.com/solidgoldpig/mondo-bank) API library
