@@ -3,7 +3,7 @@ Connect your [Mondo](http://getmondo.co.uk) to Google sheets.
 
 Registers a webhook with mondo and posts your transactions to a spreadhseet.
 
-
+![Example spreadhseet](https://raw.githubusercontent.com/mcky/mondo-sheets/master/screenshot.png)
 
 
 ## Usage
@@ -39,6 +39,9 @@ Registers a webhook with mondo and posts your transactions to a spreadhseet.
 `npm run list-hooks` - List webhooks  
 `npm run register-hook` - Register a webhook for this application  
 `npm run dedupe-hooks` - Remove webhooks with duplicate URLs  
+
+## Todo
+- Get the current account balance when a webhook is fired
 
 ## Notes
 The sheets API seems to silently fail if you try sending too many rows too fast. For now I've implimented a delay between adding rows.
