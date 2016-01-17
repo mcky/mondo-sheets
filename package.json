@@ -1,14 +1,17 @@
 {
   "name": "mondo-sheets",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mondo to Google sheets integration",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./node_modules/babel-cli/lib/_babel-node ./index.js"
+    "start": "node ./node_modules/babel-cli/lib/_babel-node ./index.js",
+    "prefill": "node ./node_modules/babel-cli/lib/_babel-node ./bin/prefill.js",
+    "register-hook": "node ./node_modules/babel-cli/lib/_babel-node ./bin/register-webhook.js",
+    "list-hooks": "node ./node_modules/babel-cli/lib/_babel-node ./bin/list-webhooks.js",
+    "dedupe-hooks": "node ./node_modules/babel-cli/lib/_babel-node ./bin/dedupe-webhooks.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Ross Mackay",
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.4.0",
