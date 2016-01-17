@@ -18,7 +18,7 @@ const formatTranaction = (transaction) => {
 	return {
 		...transaction,
 		created: dateTime,
-		account_balance: balance,
+		// account_balance: balance,
 		amount: formattedAmount,
 		date,
 		time,
